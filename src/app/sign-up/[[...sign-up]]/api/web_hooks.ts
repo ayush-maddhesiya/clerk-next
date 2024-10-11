@@ -5,7 +5,7 @@ import { buffer } from 'micro';
 import sendgrid from '@sendgrid/mail';
 
 // Set SendGrid API key from environment variables
-sendgrid.setApiKey("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");
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY || '');
 
 // Disable Next.js default body parsing for raw webhook payloads
 export const config = {
