@@ -45,7 +45,7 @@ export default async function handler(
         await sendgrid.send({
           to: user.email_addresses[0].email_address, // Recipient email
           from: 'team@hiredeasy.com', // Verified sender email in SendGrid
-          // template_id: 'd-fb47d44c999a45ec8d675b2881408766', // Email template ID from SendGrid
+          // template_id: process.env.WELCOME_EMAIL_TEMPLATE_ID, // Email template ID from SendGrid
           subject: 'Welcome to Our Platform!',
           text: `Hello ${user.first_name || ''}, welcome to our platform!`,
           html: `<strong>Hello ${user.first_name || ''}, welcome to our platform!</strong>`,
